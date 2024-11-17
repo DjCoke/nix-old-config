@@ -89,6 +89,9 @@
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "audio" "video" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEXGrUwai6ZD75n5rPTl06f0gEMtzJU0W8xFnR9YPghE"
+    ];
     isNormalUser = true;
     shell = pkgs.zsh;
   };
