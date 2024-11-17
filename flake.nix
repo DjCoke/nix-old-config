@@ -102,7 +102,9 @@
       };
 
       homeConfigurations = {
-        "nabokikh@energy" = mkHomeConfiguration "x86_64-linux" "nabokikh" "energy";
+        "erwin@k3s-01" = mkHomeConfiguration "x86_64-linux" "erwin" "k3s-01";
+        "erwin@k3s-02" = mkHomeConfiguration "x86_64-linux" "erwin" "k3s-02";
+        "erwin@k3s-03" = mkHomeConfiguration "x86_64-linux" "erwin" "k3s-03";
         "nabokikh@nabokikh-mac" = mkHomeConfiguration "aarch64-darwin" "nabokikh" "nabokikh-mac";
         "nabokikh@nabokikh-z13" = mkHomeConfiguration "x86_64-linux" "nabokikh" "nabokikh-z13";
       };
