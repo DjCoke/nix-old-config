@@ -131,6 +131,9 @@
     pipenv
     ripgrep
     unzip
+    go
+    nodejs
+    cargo
   ];
 
   # Docker configuration
