@@ -43,12 +43,11 @@
 
       # Define user configurations
       users = {
-        nabokikh = {
-          avatar = ./files/avatar/face;
-          email = "alexander.nabokikh@olx.pl";
-          fullName = "Alexander Nabokikh";
-          gitKey = "C5810093";
-          name = "nabokikh";
+        erwin = {
+          avatar = ./files/avatar/face; #TODO: Find a face
+          email = "erwin.vd.glind@me.com";
+          fullName = "Erwin van de Glind";
+          name = "erwin";
         };
       };
 
