@@ -45,7 +45,7 @@
       # Define user configurations
       users = {
         erwin = {
-          avatar = ./files/avatar/face; #TODO: Find a face
+          avatar = ./files/avatar/face; #TODO: Find a face or avatar
           email = "erwin.vd.glind@me.com";
           fullName = "Erwin van de Glind";
           name = "erwin";
