@@ -9,7 +9,8 @@
     ../modules/fzf.nix
     ../modules/git.nix
     #   ../modules/go.nix
-    #   ../modules/gpg.nix
+    #   ../modules/gpg.nix I do not use gpg
+
     ../modules/home.nix # Do not remove! It's required!
     #   ../modules/krew.nix
     ../modules/lazygit.nix

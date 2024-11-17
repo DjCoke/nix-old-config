@@ -1,5 +1,6 @@
-{...}: {
+{ ... }: {
   # Tmux terminal multiplexer configuration
+  # TODO:We need to set these configs to my own
   programs.tmux = {
     enable = true;
     baseIndex = 1;
