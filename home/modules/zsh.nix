@@ -52,10 +52,10 @@
       vi = "nvim";
       vim = "nvim";
 
-      ls = "eza --icons always"; # default view
-      ll = "eza -bhl --icons --group-directories-first"; # long list
-      la = "eza -abhl --icons --group-directories-first"; # all list
-      lt = "eza --tree --level=2 --icons"; # tree
+      ls = "eza --icons always --git"; # default view
+      ll = "eza -bhl --icons --git --group-directories-first"; # long list
+      la = "eza -abhl --icons --git --group-directories-first"; # all list
+      lt = "eza --tree --level=2 --icons --git"; # tree
     };
     initExtra = ''
       # kubectl auto-complete
@@ -79,7 +79,6 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
-    extraOptions = [ "-l" "--icons" "--git" "-a" ];
   };
 
 
