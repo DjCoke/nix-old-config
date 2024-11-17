@@ -1,5 +1,6 @@
 { outputs, ... }: {
   # This common file reflects that it is for non-Desktop machines/users
+  # TODO: check which modules we might or might not need
   imports = [
     ../modules/atuin.nix
     ../modules/bat.nix
@@ -9,7 +10,7 @@
     ../modules/git.nix
     #   ../modules/go.nix
     #   ../modules/gpg.nix
-    #   ../modules/home.nix
+    ../modules/home.nix
     #   ../modules/krew.nix
     ../modules/lazygit.nix
     #   ../modules/neovim.nix
