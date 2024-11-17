@@ -78,6 +78,13 @@
   # Enable devmon for device management
   services.devmon.enable = true;
 
+  # The programs.nix-ld.enable option in NixOS enables nix-ld, a compatibility tool that
+  # allows you to run dynamically linked binaries that are not built using Nix.
+  # This is particularly useful on NixOS, where the filesystem layout is different from standard
+  # Linux distributions, often causing binaries not managed by Nix to fail due
+  # to missing shared libraries.
+  programs.nix-ld.enable = true;
+
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
@@ -145,5 +152,13 @@
   services.locate.localuser = null;
 
   # OpenSSH daemon
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    allowSFTP = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
+
 }
