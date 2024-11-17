@@ -12,6 +12,7 @@
     };
 
     # NixOS profiles to optimize settings for different hardware
+    # Instructions to be found in: https://github.com/NixOS/nixos-hardware/tree/master
     hardware.url = "github:nixos/nixos-hardware";
 
     # Global catppuccin theme
