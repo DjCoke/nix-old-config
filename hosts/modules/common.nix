@@ -1,11 +1,10 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  userConfig,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, userConfig
+, pkgs
+, ...
 }: {
   # Nixpkgs configuration
   nixpkgs = {
@@ -19,16 +18,17 @@
   };
 
   # Register flake inputs for nix commands
-  nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
+  nix.registry = lib.mapAttrs (_: flake: { inherit flake; }) (lib.filterAttrs (_: lib.isType "flake") inputs);
 
   # Add inputs to legacy channels
-  nix.nixPath = ["/etc/nix/path"];
+  nix.nixPath = [ "/etc/nix/path" ];
   environment.etc =
-    lib.mapAttrs' (name: value: {
-      name = "nix/path/${name}";
-      value.source = value.flake;
-    })
-    config.nix.registry;
+    lib.mapAttrs'
+      (name: value: {
+        name = "nix/path/${name}";
+        value.source = value.flake;
+      })
+      config.nix.registry;
 
   # Nix settings
   nix.settings = {
@@ -41,7 +41,7 @@
     # kernelPackages = pkgs.linuxPackages_latest;
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelParams = ["quiet" "splash"];
+    kernelParams = [ "quiet" "splash" ];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
     loader.timeout = 0;
@@ -49,35 +49,24 @@
   };
 
   # Networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
 
   # Timezone
-  time.timeZone = "Europe/Warsaw";
+  time.timeZone = "Europe/Amsterdam";
 
   # Internationalization
-  i18n.defaultLocale = "en_US.UTF-8";
+  # Standaardlanguage en locale
+  i18n.defaultLocale = "nl_NL.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_IE.UTF-8";
-    LC_IDENTIFICATION = "en_IE.UTF-8";
-    LC_MEASUREMENT = "en_IE.UTF-8";
-    LC_MONETARY = "en_IE.UTF-8";
-    LC_NAME = "en_IE.UTF-8";
-    LC_NUMERIC = "en_IE.UTF-8";
-    LC_PAPER = "en_IE.UTF-8";
-    LC_TELEPHONE = "en_IE.UTF-8";
-    LC_TIME = "en_IE.UTF-8";
-  };
-
-  # Input settings
-  services.libinput.enable = true;
-
-  # X11 settings
-  services.xserver = {
-    enable = true;
-    xkb.layout = "pl";
-    xkb.variant = "";
-    excludePackages = with pkgs; [xterm];
-    displayManager.gdm.enable = true;
+    LC_ADDRESS = "nl_NL.UTF-8";
+    LC_IDENTIFICATION = "nl_NL.UTF-8";
+    LC_MEASUREMENT = "nl_NL.UTF-8";
+    LC_MONETARY = "nl_NL.UTF-8";
+    LC_NAME = "nl_NL.UTF-8";
+    LC_NUMERIC = "nl_NL.UTF-8";
+    LC_PAPER = "nl_NL.UTF-8";
+    LC_TELEPHONE = "nl_NL.UTF-8";
+    LC_TIME = "nl_NL.UTF-8";
   };
 
   # PATH configuration
@@ -89,21 +78,10 @@
   # Enable devmon for device management
   services.devmon.enable = true;
 
-  # Enable PipeWire for sound
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "audio" "video" ];
     isNormalUser = true;
     shell = pkgs.zsh;
   };
@@ -128,14 +106,12 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    (python3.withPackages (ps: with ps; [pip virtualenv]))
-    anki
+    (python3.withPackages (ps: with ps; [ pip virtualenv ]))
     awscli2
     brave
     delta
     dig
     docker-compose
-    du-dust
     eza
     fd
     gcc
@@ -144,22 +120,10 @@
     jq
     killall
     kubectl
-    lazydocker
-    mesa
     nh
-    obs-studio
-    openconnect
-    pavucontrol
     pipenv
-    pulseaudio
-    qt6.qtwayland
     ripgrep
-    telegram-desktop
-    terraform
-    terragrunt
     unzip
-    wl-clipboard
-    stable.zoom-us
   ];
 
   # Docker configuration
@@ -172,7 +136,7 @@
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["Meslo" "JetBrainsMono"];})
+    (nerdfonts.override { fonts = [ "Meslo" "JetBrainsMono" ]; })
     roboto
   ];
 
