@@ -39,6 +39,10 @@
       "erwin"
     ]; # Set users that are allowed to use the flake command
   };
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 30d";
+  };
 
   # Boot settings
   boot = {
