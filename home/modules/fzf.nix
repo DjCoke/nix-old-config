@@ -1,7 +1,10 @@
-{...}: {
+{ ... }: {
   # Install fzf via home-manager module
   programs.fzf = {
     enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+
 
     defaultCommand = "find .";
     defaultOptions = [

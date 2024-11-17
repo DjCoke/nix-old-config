@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   # Zsh shell configuration
   programs.zsh = {
     enable = true;
@@ -75,6 +75,13 @@
       bindkey "^e" edit-command-line
     '';
   };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    extraOptions = [ "-l" "--icons" "--git" "-a" ];
+  };
+
 
   programs.starship = {
     enable = true;
