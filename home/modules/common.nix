@@ -1,4 +1,4 @@
-{outputs, ...}: {
+{ outputs, ... }: {
   imports = [
     ../modules/alacritty.nix
     ../modules/atuin.nix

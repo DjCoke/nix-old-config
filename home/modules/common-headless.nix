@@ -1,4 +1,5 @@
 { outputs, ... }: {
+  # This common file reflects that it is for non-Desktop machines/users
   imports = [
     ../modules/atuin.nix
     ../modules/bat.nix
