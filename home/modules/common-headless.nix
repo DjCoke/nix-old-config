@@ -10,7 +10,7 @@
     ../modules/git.nix
     #   ../modules/go.nix
     #   ../modules/gpg.nix
-    ../modules/home.nix
+    ../modules/home.nix # Do not remove! It's required!
     #   ../modules/krew.nix
     ../modules/lazygit.nix
     #   ../modules/neovim.nix
