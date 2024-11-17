@@ -1,4 +1,5 @@
 { ... }: {
+  # Used the Energy layout from the upstream repo 
   imports = [
     ../modules/common.nix
   ];
