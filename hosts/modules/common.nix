@@ -146,6 +146,7 @@
     go
     nodejs
     cargo
+    sops
   ];
 
   # Docker configuration
