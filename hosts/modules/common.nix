@@ -103,7 +103,7 @@
     description = userConfig.fullName;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "audio" "video" ];
     openssh.authorizedKeys.keys = [
-      (builtins.readFile "../../files/keys/id_${userConfig.name}.pub")
+      (builtins.readFile "./../../files/keys/id_${userConfig.name}.pub")
     ];
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets."${userConfig.name}-password".path;
