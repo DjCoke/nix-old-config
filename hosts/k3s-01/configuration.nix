@@ -7,6 +7,7 @@
     inputs.sops-nix.nixosModules.sops
     ./hardware-configuration.nix
     ../modules/common.nix
+    ../modules/sops.nix
   ];
 
   # Set hostname
