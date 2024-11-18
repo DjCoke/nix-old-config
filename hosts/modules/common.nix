@@ -126,6 +126,7 @@
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [ pip virtualenv ]))
     awscli2
+    age
     brave
     delta
     dig
