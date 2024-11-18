@@ -93,6 +93,9 @@
   # to missing shared libraries.
   programs.nix-ld.enable = true;
 
+  # decrypt ${userConfig.name}-password to /run/secrets-for-users so it can be used to create the user
+  sops.secrets."${userConfig.name}-password".neededForUsers = true;
+
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
