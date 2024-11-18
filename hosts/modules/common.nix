@@ -36,7 +36,7 @@
     auto-optimise-store = true;
     trusted-users = [
       "root"
-      "erwin"
+      "erwin" # I was thinking to dynamically set it to "${userConfig.name}", but that would be a security flaw
     ]; # Set users that are allowed to use the flake command
   };
   nix.gc = {
@@ -103,7 +103,7 @@
     description = userConfig.fullName;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "audio" "video" ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEXGrUwai6ZD75n5rPTl06f0gEMtzJU0W8xFnR9YPghE"
+      (builtins.readFile "../../files/keys/id_${userConfig.name}.pub")
     ];
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets."${userConfig.name}-password".path;
