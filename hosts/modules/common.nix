@@ -95,6 +95,8 @@
 
   # decrypt ${userConfig.name}-password to /run/secrets-for-users so it can be used to create the user
   sops.secrets."${userConfig.name}-password".neededForUsers = true;
+  # Required for password to be set via sops during system activation!
+  users.mutableUsers = false;
 
   # User configuration
   users.users.${userConfig.name} = {
@@ -104,6 +106,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEXGrUwai6ZD75n5rPTl06f0gEMtzJU0W8xFnR9YPghE"
     ];
     isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets."${userConfig.name}-password".path;
     shell = pkgs.zsh;
   };
 
