@@ -64,7 +64,7 @@
       scripts = "cd $HOME/scripts";
       repo = "cd $HOME/Documents/repositories";
       temp = "cd $HOME/Downloads/temp";
-      ncfg = "cd $HOME/Documents/repositories";
+      ncfg = "cd $HOME/Documents/repositories/nix-config";
 
       v = "nvim";
       vi = "nvim";
