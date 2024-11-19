@@ -19,6 +19,7 @@
     #   ../modules/scripts.nix
     ../modules/tmux.nix
     ../modules/zsh.nix
+    ../modules/sops.nix
   ];
 
   # Nixpkgs configuration
