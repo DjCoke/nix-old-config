@@ -33,6 +33,7 @@
   # Nix settings
   nix.settings = {
     experimental-features = "nix-command flakes";
+    warn-dirty = false;
     auto-optimise-store = true;
     trusted-users = [
       "root"
