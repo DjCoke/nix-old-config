@@ -18,4 +18,8 @@
     # We use down to trigger, and use up to quickly edit the last entry only
     flags = [ "--disable-up-arrow" ];
   };
+  programs.zsh.initExtra = ''
+    # Bind down key for atuin, specifically because we use invert
+    bindkey "$key[Down]"  atuin-up-search
+  '';
 }
