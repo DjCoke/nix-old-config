@@ -13,10 +13,11 @@
 
     defaultSopsFile = ../../secrets.yaml;
     validateSopsFiles = false;
-  };
-  secrets = {
-    "private_keys/${userConfig.name}" = {
-      path = "/home/${userConfig.name}/.ssh/id_ed25519";
+
+    secrets = {
+      "private_keys/${userConfig.name}" = {
+        path = "/home/${userConfig.name}/.ssh/id_ed25519";
+      };
     };
   };
 }
