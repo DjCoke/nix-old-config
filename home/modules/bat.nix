@@ -6,7 +6,7 @@
     catppuccin.enable = true;
     config = {
       pager = "less -FR";
-      style = "numbers,changes,header";
+      #  style = "numbers,changes,header";
     };
   };
 }
