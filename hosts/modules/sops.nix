@@ -1,12 +1,15 @@
 { inputs, config, ... }:
+let
+  secretspath = builtins.toString inputs.mysecrets;
+in
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];
 
   sops = {
-    
-    defaultSopsFile = ../../secrets.yaml;
+
+    defaultSopsFile = "${secretspath}/secrets.yaml";
     validateSopsFiles = false;
 
     age = {
@@ -23,7 +26,7 @@
     # secrets required for use creation are handled in respective ./home/<username>.nix files
     # because they will be output to /run/secrets/-for-users and only when the user is assigned to host
     secrets = {
-      msmtp-password = {};
+      msmtp-password = { };
     };
   };
 }

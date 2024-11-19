@@ -1,7 +1,11 @@
 # sops configuration for Home Manager
 
-{ inputs, userConfig, ... }:
+{ inputs, config, userConfig, ... }:
+let
+  secretspath = builtins.toString inputs.mysecrets;
+in
 {
+
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -11,7 +15,7 @@
     age.keyFile = "/home/erwin/.config/sops/age/keys.txt";
 
 
-    defaultSopsFile = ../../secrets.yaml;
+    defaultSopsFile = "${secretspath}/secrets.yaml";
     validateSopsFiles = false;
 
     secrets = {
