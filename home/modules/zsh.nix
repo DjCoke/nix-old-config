@@ -4,6 +4,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    autocd = true;
     syntaxHighlighting.enable = true;
     loginExtra = ''
       #  wordt uitgevoerd bij het openen van elke nieuwe interactieve shell
@@ -12,6 +13,12 @@
 
     shellAliases = {
       ff = "fastfetch";
+
+      #-------------Bat related------------
+      cat = "bat";
+      diff = "batdiff";
+      rg = "batgrep";
+      man = "batman";
 
       # git
       gaa = "git add --all";
@@ -52,8 +59,12 @@
       ld = "lazydocker";
       lg = "lazygit";
 
+      #------------Navigation------------
+      doc = "cd $HOME/Documents";
+      scripts = "cd $HOME/scripts";
       repo = "cd $HOME/Documents/repositories";
       temp = "cd $HOME/Downloads/temp";
+      ncfg = "cd $HOME/Documents/repositories";
 
       v = "nvim";
       vi = "nvim";
@@ -86,6 +97,15 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    options = [
+      "--cmd cd" # replace cd with z and zi (via cdi)
+    ];
   };
 
   programs.starship = {
