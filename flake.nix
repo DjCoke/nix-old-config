@@ -34,6 +34,15 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    #################### Personal Repositories ####################
+
+    # Private secrets repo.  See https://github.com/EmergentMind/nix-config/blob/dev/docs/secretsmgmt.md
+    # Authenticate via ssh and use shallow clone
+    nix-secrets = {
+      url = "git+ssh://git@github.com/DjCoke/nix-secrets.git?ref=main&shallow=1";
+      flake = false;
+    };
   };
 
   outputs =
