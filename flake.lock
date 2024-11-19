@@ -105,6 +105,24 @@
         "type": "github"
       }
     },
+    "mysecrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1732055260,
+        "narHash": "sha256-hUrOD0JH9FEZen+RseyxHlMUaPIfdkSV62Z8F3+rir8=",
+        "ref": "main",
+        "rev": "988f1e1596eba6bf9ed6f6b30317b0c870ce8442",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/DjCoke/nix-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/DjCoke/nix-secrets.git"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -142,24 +160,6 @@
         "owner": "zhaofengli-wip",
         "repo": "nix-homebrew",
         "type": "github"
-      }
-    },
-    "nix-secrets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1729965835,
-        "narHash": "sha256-Ld+fS8yE84nKG87RbBJU6mz3QYhdjJwpQ0QPd5wM4pE=",
-        "ref": "main",
-        "rev": "50205a06b02c30d277d2d69d649948053906610c",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/DjCoke/nix-secrets.git"
-      },
-      "original": {
-        "ref": "main",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/DjCoke/nix-secrets.git"
       }
     },
     "nixpkgs": {
@@ -229,8 +229,8 @@
         "darwin": "darwin",
         "hardware": "hardware",
         "home-manager": "home-manager",
+        "mysecrets": "mysecrets",
         "nix-homebrew": "nix-homebrew",
-        "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
         "sops-nix": "sops-nix"
