@@ -5,6 +5,11 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    loginExtra = ''
+      #  wordt uitgevoerd bij het openen van elke nieuwe interactieve shell
+      ${pkgs.fastfetch}/bin/fastfetch
+    '';
+
     shellAliases = {
       ff = "fastfetch";
 
