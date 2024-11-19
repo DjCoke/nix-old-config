@@ -1,8 +1,13 @@
-{...}: {
+{ ... }: {
   # Install atuin via home-manager module
   programs.atuin = {
     enable = true;
+    enableBashIntegration = false;
+    enableZshIntegration = true;
+    enableFishIntegration = false;
+
     settings = {
+
       inline_height = 25;
       invert = true;
       records = true;
@@ -10,6 +15,7 @@
       secrets_filter = true;
       style = "compact";
     };
-    flags = ["--disable-up-arrow"];
+    # We use down to trigger, and use up to quickly edit the last entry only
+    flags = [ "--disable-up-arrow" ];
   };
 }
