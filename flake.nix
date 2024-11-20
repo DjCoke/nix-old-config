@@ -119,8 +119,8 @@
     {
       nixosConfigurations = {
         k3s-01 = mkNixosConfiguration "k3s-01" "erwin"; # First k3s-01 node
-        k3s-02 = mkNixosConfiguration "k3s-02" "erwin"; # Second k3s-02 node
-        k3s-03 = mkNixosConfiguration "k3s-03" "erwin"; # Second k3s-03 node
+        #   k3s-02 = mkNixosConfiguration "k3s-02" "erwin"; # Second k3s-02 node
+        #   k3s-03 = mkNixosConfiguration "k3s-03" "erwin"; # Second k3s-03 node
       };
 
       darwinConfigurations = {
