@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ../modules/common.nix
     ../modules/sops.nix
+    ./disko-config.nix
   ];
 
   # Set hostname
