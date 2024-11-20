@@ -10,6 +10,7 @@
     ../modules/common.nix
     ../modules/sops.nix
     ./disko-config.nix
+    ../modules/zfs.nix
   ];
 
   # Set hostname
