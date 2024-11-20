@@ -29,6 +29,15 @@
     # Homebrew
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
+    #################### Repositories for Utilities ####################
+
+    # Partition Manager disko
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Secrets management. See ./docs/secretsmgmt.md (on the repo of emergent mind)
     sops-nix = {
       url = "github:mic92/sops-nix";
@@ -52,6 +61,7 @@
     , home-manager
     , nix-homebrew
     , nixpkgs
+    , disko
     , ...
     } @ inputs:
     let
