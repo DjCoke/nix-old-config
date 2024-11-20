@@ -1,0 +1,31 @@
+{ inputs
+, lib
+, config
+, hostname
+, pkgs
+, ...
+}: {
+
+  networking.hostId = hostname;
+  environment.systemPackages = [ pkgs.zfs-prune-snapshots ];
+  boot = {
+    # Newest kernels might not be supported by ZFS
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelParams = [
+      "nohibernate"
+      "zfs.zfs_arc_max=17179869184"
+    ];
+    supportedFilesystems = [ "vfat" "zfs" ];
+    zfs = {
+      devNodes = "/dev/disk/by-id/";
+      forceImportAll = true;
+      requestEncryptionCredentials = true;
+    };
+  };
+  services.zfs = {
+    autoScrub.enable = true;
+    trim.enable = true;
+  };
+
+
+}
