@@ -1,7 +1,4 @@
-{ inputs
-, lib
-, config
-, hostname
+{ hostname
 , pkgs
 , ...
 }: {
@@ -9,8 +6,6 @@
   networking.hostId = hostname;
   environment.systemPackages = [ pkgs.zfs-prune-snapshots ];
   boot = {
-    # Newest kernels might not be supported by ZFS
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [
       "nohibernate"
       "zfs.zfs_arc_max=17179869184"
