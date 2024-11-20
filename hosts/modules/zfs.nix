@@ -1,9 +1,6 @@
-{ hostname
-, pkgs
-, ...
-}: {
-
-  networking.hostId = hostname;
+{ pkgs, ... }:
+{
+  networking.hostId = "266c73a2";
   environment.systemPackages = [ pkgs.zfs-prune-snapshots ];
   boot = {
     kernelParams = [
