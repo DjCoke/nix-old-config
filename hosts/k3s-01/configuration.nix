@@ -5,6 +5,7 @@
   imports = [
     inputs.hardware.nixosModules.common-pc-ssd #decided to keep this module, as this is a VM on a SSD
     inputs.sops-nix.nixosModules.sops
+    inputs.disko.nixosModules.disko # partition manager
     ./hardware-configuration.nix
     ../modules/common.nix
     ../modules/sops.nix
