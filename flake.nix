@@ -71,7 +71,7 @@
       users = {
         erwin = {
           avatar = ./files/avatar/face; #TODO: Find a face or avatar
-          email = "erwin.vd.glind@me.com";
+          email = "8378780+DjCoke@users.noreply.github.com";
           fullName = "Erwin van de Glind";
           name = "erwin";
         };
